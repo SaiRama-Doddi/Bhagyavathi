@@ -9,48 +9,18 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.2,
-      duration: 0.8,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeInOut",
-    },
-  },
-};
-
 const Footer = () => {
   return (
-    <motion.footer
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      variants={containerVariants}
-      className="bg-[#0D4D66] text-white pt-12 pb-8 px-6 sm:px-16 lg:px-24"
-    >
+    <footer className="bg-[#0D4D66] text-white pt-12 pb-8 px-6 sm:px-16 lg:px-24">
       {/* Top Footer */}
-      <motion.div
-        variants={containerVariants}
-        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-b border-white/20 pb-10"
-      >
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-b border-white/20 pb-10">
         {/* About */}
-        <motion.div variants={itemVariants}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-xl font-bold text-[#9FBFC5] mb-4">About Us</h3>
           <p className="text-sm text-gray-300">
             Bhagyavathi Group connects job seekers with top employers through
@@ -59,7 +29,12 @@ const Footer = () => {
         </motion.div>
 
         {/* Services */}
-        <motion.div variants={itemVariants}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-xl font-bold text-[#9FBFC5] mb-4">Our Services</h3>
           <ul className="text-sm space-y-2 text-gray-300">
             <li>Resume Building</li>
@@ -71,7 +46,12 @@ const Footer = () => {
         </motion.div>
 
         {/* Contact */}
-        <motion.div variants={itemVariants}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-xl font-bold text-[#9FBFC5] mb-4">Contact</h3>
           <ul className="text-sm space-y-2 text-gray-300">
             <li className="flex items-center gap-2">
@@ -87,7 +67,12 @@ const Footer = () => {
         </motion.div>
 
         {/* Social Media */}
-        <motion.div variants={itemVariants}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeInOut", delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-xl font-bold text-[#9FBFC5] mb-4">Follow Us</h3>
           <div className="flex gap-4 text-2xl">
             <a href="#" className="hover:text-[#9FBFC5] transition">
@@ -101,16 +86,19 @@ const Footer = () => {
             </a>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Bottom Footer */}
       <motion.div
-        variants={itemVariants}
         className="max-w-7xl mx-auto mt-6 text-center text-sm text-gray-400"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
       >
         © {new Date().getFullYear()} Bhagyavathi Group. All rights reserved.
       </motion.div>
-    </motion.footer>
+    </footer>
   );
 };
 

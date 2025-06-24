@@ -1,18 +1,18 @@
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Header';
-import Footer from './components/Footer';
 import AppRoutes from './routes/AppRoutes';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
-    <Router>
+    <div>
       <Navbar />
-      <main className="min-h-screen">
+      <div className="pt-16"> {/* Prevent content hidden behind navbar */}
         <AppRoutes />
-      </main>
-      <Footer />
-    </Router>
+        <Footer />
+      </div>
+    </div>
   );
 };
 
