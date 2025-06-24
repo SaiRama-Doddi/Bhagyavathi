@@ -1,14 +1,20 @@
+// src/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import './index.css'; // Tailwind styles
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // if used
+import './index.css';
 
-const rootElement = document.getElementById('root');
-if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
+const container = document.getElementById('root');
+if (container) {
+  const root = ReactDOM.createRoot(container);
+  root.render(
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </React.StrictMode>
   );
+} else {
+  throw new Error("Root container not found");
 }

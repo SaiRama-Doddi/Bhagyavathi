@@ -27,7 +27,7 @@ const itemVariants = {
 const Home = () => {
   return (
     <>
-      <section className="bg-[#0D4D66] text-white py-12 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-32 mt-16">
+      <section className="bg-[#0D4D66] text-white py-12 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-32 mt-2">
         <motion.div
           variants={containerVariants}
           initial="hidden"
